@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1724132556922,
+      "tag": "0000_sleepy_thunderbolt",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1724133208426,
+      "tag": "0001_slimy_klaw",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1724352250026,
+      "tag": "0002_deep_starjammers",
+      "breakpoints": true
+    }
+  ]
+}
