@@ -33,7 +33,7 @@ export const CategorieForm = (
   const handleSubmit = (values : FormValues) =>{
 
     onSubmit(values)
-    console.log(values)
+
   }
 
   const handleDelete = () =>{
