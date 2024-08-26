@@ -5,6 +5,9 @@ import { Edit, MoreHorizontal, Trash } from "lucide-react";
 import { useDeleteAccount } from "@/features/accounts/api/use-delete.account";
 import { useConfirm } from "@/hooks/use-confirm";
 import { useEditAccount } from "@/features/accounts/api/use-edit-account";
+import { useOpenTransaction } from "@/features/transactions/hooks/use-open-transaction";
+import { useEditTransaction } from "@/features/transactions/api/use-edit-transacton";
+import { useDeleteTransaction } from "@/features/transactions/api/use-delete-transaction";
 
 type Props ={
     id: string;
@@ -14,15 +17,15 @@ export const Actions =({id}:Props) =>{
         "Are you sure",
         "You are about to delete the transaction"
     );
-    const deleteAccount = useDeleteAccount(id);
-    const editAccount = useEditAccount(id);
-    const {onOpen} = useOpenAccount();
+    const deletetransactions = useDeleteTransaction(id);
+    const editTransaction = useEditTransaction(id);
+    const {onOpen} = useOpenTransaction();
     const handleDelete = async () =>{
         // const ok = await confirm();
         // if(ok){
         //     deleteAccount.mutate();
         // }
-        deleteAccount.mutate()
+        deletetransactions.mutate()
     }
     return(
        <>
@@ -34,11 +37,11 @@ export const Actions =({id}:Props) =>{
         </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-        <DropdownMenuItem disabled={editAccount.isPending} onClick={() =>onOpen(id)}>
+        <DropdownMenuItem disabled={editTransaction.isPending} onClick={() =>onOpen(id)}>
             <Edit className="size-4 mr-2"/>
             Edit
         </DropdownMenuItem>
-        <DropdownMenuItem disabled={deleteAccount.isPending} onClick={handleDelete}>
+        <DropdownMenuItem disabled={deletetransactions.isPending} onClick={handleDelete}>
             <Trash className="size-4 mr-2"/>
             Delete
         </DropdownMenuItem>

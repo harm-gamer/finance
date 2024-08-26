@@ -20,6 +20,7 @@ export const useDeleteCaterogies = (id?:string) =>{
             toast.success("Categorie deleted");
             queryClient.invalidateQueries({queryKey :["category",{id}]})
             queryClient.invalidateQueries({queryKey :["categories"]})  
+            queryClient.invalidateQueries({queryKey :["transactions"]})
         },
         onError : () =>{
            toast.error("Failed to edit categories")
